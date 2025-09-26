@@ -9,7 +9,7 @@ export default function Home() {
 
   const fetchAlerts = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/alerts', {
+      const res = await axios.get('https://notification-application.onrender.com/api/alerts', {
         headers: { Authorization: `Bearer ${token}` }
       });
       // Filter alerts relevant to user: active and visible

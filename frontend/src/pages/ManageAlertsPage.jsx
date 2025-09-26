@@ -15,7 +15,7 @@ export default function ManageAlertsPage() {
 
   const fetchAlerts = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/alerts', {
+      const res = await axios.get('https://notification-application.onrender.com/api/alerts', {
         headers: { Authorization: `Bearer ${token}` }
       });
       setAlerts(res.data);
@@ -26,7 +26,7 @@ export default function ManageAlertsPage() {
 
   const handleArchive = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/alerts/${id}`, {
+      await axios.delete(`https://notification-application.onrender.com/api/alerts/${id}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       fetchAlerts();
@@ -52,7 +52,7 @@ export default function ManageAlertsPage() {
   const handleUpdate = async (id) => {
     try {
       await axios.put(
-        `http://localhost:5000/api/alerts/${id}`,
+        `https://notification-application.onrender.com/api/alerts/${id}`,
         {
           ...editForm,
           startTime: editForm.startTime ? new Date(editForm.startTime) : null,

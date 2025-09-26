@@ -26,7 +26,7 @@ export default function ViewAlertsPage() {
 
   const fetchAlerts = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/alerts', {
+      const res = await axios.get('https://notification-application.onrender.com/api/alerts', {
         headers: { Authorization: `Bearer ${token}` }
       });
       setAlerts(Array.isArray(res.data) ? res.data : res.data.alerts || []);

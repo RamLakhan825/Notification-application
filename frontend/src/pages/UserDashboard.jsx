@@ -14,7 +14,7 @@ export default function UserDashboard() {
   useEffect(() => {
     fetchAlerts();
 
-    const socket = io('http://localhost:5000');
+    const socket = io('https://notification-application.onrender.com/');
     if (userId) {
       socket.emit('join', userId); // join user-specific room
     }
@@ -29,7 +29,7 @@ export default function UserDashboard() {
 
   const fetchAlerts = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/user/alerts', {
+      const res = await axios.get('https://notification-application.onrender.com/api/user/alerts', {
         headers: { Authorization: `Bearer ${token}` },
       });
       setAlerts(res.data);
@@ -54,7 +54,7 @@ export default function UserDashboard() {
   const handleSnooze = async (id) => {
     try {
       await axios.post(
-        `http://localhost:5000/api/user/alerts/${id}/snooze`,
+        `https://notification-application.onrender.com/api/user/alerts/${id}/snooze`,
         {},
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -73,7 +73,7 @@ export default function UserDashboard() {
   const handleMarkRead = async (id) => {
     try {
       await axios.post(
-        `http://localhost:5000/api/user/alerts/${id}/read`,
+        `https://notification-application.onrender.com/api/user/alerts/${id}/read`,
         {},
         { headers: { Authorization: `Bearer ${token}` } }
       );
