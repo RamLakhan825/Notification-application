@@ -55,31 +55,11 @@ notification-app/
 │── /scheduler
 │ └── alertScheduler.js
 
-## ⚙️ Setup & Installation
-
-1. Clone the repository.
-Install dependencies:
-npm install
-Create a .env file and add:
-
-env
-PORT=5000
-MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_secret_key
-EMAIL_USER=your email Id
-EMAIL_PASS=email passkey
-TWILIO_SID=Twillio SSI id
-TWILIO_AUTH_TOKEN=Twilio token
-TWILIO_PHONE=Twilio phone no.
-
-Start the server:
-npm run dev
-
 📌 Usage
-Open browser at: http://localhost:5000
 
 Login as Admin using the credentials above
 
 Create alerts and assign delivery types
 
 End users will receive notifications in real-time
+
